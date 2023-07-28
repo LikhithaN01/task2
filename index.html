@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .data-body{
+            width:auto;
+            height:380px;
+            padding:20px;
+        }
+        .data-body .card{
+            float:left;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to HomePage</h1>
+  
+    <div id="id0" class="data-body">
+        
+    </div>
+    
+    <script>
+       
+       const setdata =  (data) =>{
+        i=0
+         
+           let l='';
+            while(i<data.length){
+                var obj = data[i];
+                l += `
+            <div class="card" style="width: 18rem;">
+            ${obj.capsule_id}
+            <div class="card-body">
+                
+             <p class="card-text">${obj.capsule_serial}</p>
+              <p class="card-text">${obj.details}</p>
+              <p class="card-text">${obj.status}</p>
+              <p class="card-text">${obj.original_launch}</p>
+              <p class="card-text">${obj.landings}</p>
+            </div>
+          </div>`;
+                i++
+            }
+            document.getElementById("id0").innerHTML=l;
+       }
+
+        fetch('https://api.spacexdata.com/v3/capsules')
+        .then(res=> res.json())
+        .then(data=>{console.log(data)
+            setdata(data);
+            
+        })
+    </script>
+</body>
+</html>

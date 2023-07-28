@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login in js</title>
+
+</head>
+    <style>
+        .container{
+            text-align: center;
+            margin-top: 60px ;
+            
+        }
+        .box{ 
+        width :100%;
+        width : 100px;
+        height:25px ;
+        border-radius: 5px; 
+        margin-top: 5px;
+        text-align: center;
+
+        
+        }
+         .btn{
+        width: 20%;
+        text-align: center;
+        height: 30px;
+        top: 45%;
+        margin-top: 20px;
+        /* position: absolute;
+        right: 12px; */
+        background-color: rgba(3, 194, 3, 0.651);
+            }
+            
+   </style>
+<body>
+    <script src ="login1.js"></script>
+    
+    <div class="container">
+        <h1 >Login page</h1>
+        
+
+    <form>
+        <label class="form-label">Username</label>
+        <input placeholder=" Enter username" type = "username" class ='box' id= "username"> <br><br>
+        <label class="form-label">Password</label>
+        <input placeholder=" Enter Password" type = "password" class ='box' id= "password"> <br>
+          
+        <button type = "button" class = "btn" onclick = "getInfo()"> Login</button>
+      
+        <h5>or</h5>
+        <h6>create account <a href="#" onclick="signup()">signup</a>
+
+    </form>
+  
+</div>
+
+    
+      
+
+</body>
+</html>
+
